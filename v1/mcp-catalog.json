@@ -1,0 +1,966 @@
+{
+  "version": "2026-11-13.1",
+  "servers": [
+    {
+      "slug": "canva",
+      "name": "Canva",
+      "description": "Read and create Canva designs",
+      "category": "Design",
+      "transport": "http",
+      "url": "https://mcp.canva.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "miro",
+      "name": "Miro",
+      "description": "Read and update collaborative boards",
+      "category": "Design",
+      "transport": "http",
+      "url": "https://mcp.miro.com/",
+      "oauth": {
+        "required": true
+      },
+      "headers": {
+        "X-AI-Source": "dyad"
+      }
+    },
+    {
+      "slug": "tldraw",
+      "name": "tldraw",
+      "description": "Create and edit tldraw canvases",
+      "category": "Design",
+      "transport": "http",
+      "url": "https://tldraw-mcp-app.tldraw.workers.dev/mcp"
+    },
+    {
+      "slug": "quiverai",
+      "name": "QuiverAI",
+      "description": "Generate and edit animated SVG assets",
+      "category": "Design",
+      "transport": "http",
+      "url": "https://app.quiver.ai/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "linear",
+      "name": "Linear",
+      "description": "Create and search issues",
+      "category": "Project Management",
+      "transport": "http",
+      "url": "https://mcp.linear.app/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "atlassian",
+      "name": "Atlassian (Jira & Confluence)",
+      "description": "Search Jira issues and Confluence pages",
+      "category": "Project Management",
+      "transport": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "monday",
+      "name": "Monday.com",
+      "description": "Manage boards and items",
+      "category": "Project Management",
+      "transport": "http",
+      "url": "https://mcp.monday.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "clickup",
+      "name": "ClickUp",
+      "description": "Manage tasks and docs",
+      "category": "Project Management",
+      "transport": "http",
+      "url": "https://mcp.clickup.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "description": "Search and edit pages and databases",
+      "category": "Project Management",
+      "transport": "http",
+      "url": "https://mcp.notion.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "granola",
+      "name": "Granola",
+      "description": "AI meeting notes",
+      "category": "Collaboration",
+      "transport": "http",
+      "url": "https://mcp.granola.ai/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "chatprd",
+      "name": "ChatPRD",
+      "description": "AI copilot for product specs",
+      "category": "Collaboration",
+      "transport": "http",
+      "url": "https://app.chatprd.ai/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "stripe",
+      "name": "Stripe",
+      "description": "Manage payments, customers, and products",
+      "category": "Payments & Finance",
+      "featured": true,
+      "transport": "http",
+      "url": "https://mcp.stripe.com",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "ramp",
+      "name": "Ramp",
+      "description": "Corporate cards and expenses",
+      "category": "Payments & Finance",
+      "transport": "http",
+      "url": "https://mcp.ramp.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "antimetal",
+      "name": "Antimetal",
+      "description": "Cloud cost optimization",
+      "category": "Payments & Finance",
+      "transport": "http",
+      "url": "https://mcp.antimetal.com",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "webflow",
+      "name": "Webflow",
+      "description": "Manage sites and CMS content",
+      "category": "Websites & Content",
+      "transport": "http",
+      "url": "https://mcp.webflow.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "wix",
+      "name": "Wix",
+      "description": "Manage sites and business data",
+      "category": "Websites & Content",
+      "transport": "http",
+      "url": "https://mcp.wix.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "sanity",
+      "name": "Sanity",
+      "description": "Headless CMS",
+      "category": "Websites & Content",
+      "transport": "http",
+      "url": "https://mcp.sanity.io",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "cloudinary",
+      "name": "Cloudinary",
+      "description": "Image and video hosting",
+      "category": "Websites & Content",
+      "transport": "http",
+      "url": "https://asset-management.mcp.cloudinary.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "mintlify",
+      "name": "Mintlify",
+      "description": "Documentation sites",
+      "category": "Websites & Content",
+      "transport": "http",
+      "url": "https://mcp.mintlify.com",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "huggingface",
+      "name": "Hugging Face",
+      "description": "Search models, datasets, and papers",
+      "category": "AI & Media",
+      "transport": "http",
+      "url": "https://huggingface.co/mcp",
+      "oauth": {
+        "required": false
+      }
+    },
+    {
+      "slug": "heygen",
+      "name": "HeyGen",
+      "description": "AI avatar videos",
+      "category": "AI & Media",
+      "transport": "http",
+      "url": "https://mcp.heygen.com/mcp/v1/",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "higgsfield",
+      "name": "Higgsfield",
+      "description": "AI video generation",
+      "category": "AI & Media",
+      "transport": "http",
+      "url": "https://mcp.higgsfield.ai/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "roboflow",
+      "name": "Roboflow",
+      "description": "Computer vision models",
+      "category": "AI & Media",
+      "transport": "http",
+      "url": "https://mcp.roboflow.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "braintrust",
+      "name": "Braintrust",
+      "description": "LLM evals and observability",
+      "category": "AI & Media",
+      "transport": "http",
+      "url": "https://api.braintrust.dev/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "posthog",
+      "name": "PostHog",
+      "description": "Query analytics and feature flags",
+      "category": "Analytics",
+      "transport": "http",
+      "url": "https://mcp.posthog.com/mcp",
+      "oauth": {
+        "required": true
+      },
+      "headers": {
+        "x-posthog-mcp-consumer": "dyad"
+      }
+    },
+    {
+      "slug": "amplitude",
+      "name": "Amplitude",
+      "description": "Query analytics and user behavior",
+      "category": "Analytics",
+      "transport": "http",
+      "url": "https://mcp.amplitude.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "mixpanel",
+      "name": "Mixpanel",
+      "description": "Query events and funnels",
+      "category": "Analytics",
+      "transport": "http",
+      "url": "https://mcp.mixpanel.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "pendo",
+      "name": "Pendo",
+      "description": "Product analytics and in-app guides",
+      "category": "Analytics",
+      "transport": "http",
+      "url": "https://app.pendo.io/mcp/v0/shttp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "hex",
+      "name": "Hex",
+      "description": "Collaborative data notebooks",
+      "category": "Analytics",
+      "transport": "http",
+      "url": "https://app.hex.tech/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "sentry",
+      "name": "Sentry",
+      "description": "Investigate errors and performance issues",
+      "category": "Observability",
+      "transport": "http",
+      "url": "https://mcp.sentry.dev/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "grafana-cloud",
+      "name": "Grafana Cloud",
+      "description": "Query dashboards, metrics, and alerts",
+      "category": "Observability",
+      "transport": "http",
+      "url": "https://mcp.grafana.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "cloudflare-observability",
+      "name": "Cloudflare Observability",
+      "description": "Query Workers logs and analytics",
+      "category": "Observability",
+      "transport": "http",
+      "url": "https://observability.mcp.cloudflare.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "thousandeyes",
+      "name": "Cisco ThousandEyes",
+      "description": "Network monitoring",
+      "category": "Observability",
+      "transport": "http",
+      "url": "https://api.thousandeyes.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "firetiger",
+      "name": "Firetiger",
+      "description": "Observability data platform",
+      "category": "Observability",
+      "transport": "http",
+      "url": "https://api.cloud.firetiger.com/mcp/v1",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "tierzero",
+      "name": "TierZero",
+      "description": "AI IT support",
+      "category": "Observability",
+      "transport": "http",
+      "url": "https://api.tierzero.ai/mcp/",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "railway",
+      "name": "Railway",
+      "description": "Manage deployments and services",
+      "category": "Infrastructure",
+      "transport": "http",
+      "url": "https://mcp.railway.com",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "prisma-postgres",
+      "name": "Prisma Postgres",
+      "description": "Manage hosted Postgres databases",
+      "category": "Infrastructure",
+      "transport": "http",
+      "url": "https://mcp.prisma.io/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "cloudflare-bindings",
+      "name": "Cloudflare Bindings",
+      "description": "Build Workers with KV, R2, and D1",
+      "category": "Infrastructure",
+      "transport": "http",
+      "url": "https://bindings.mcp.cloudflare.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "cloudflare-builds",
+      "name": "Cloudflare Builds",
+      "description": "Manage Workers builds",
+      "category": "Infrastructure",
+      "transport": "http",
+      "url": "https://builds.mcp.cloudflare.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "mongodb",
+      "name": "MongoDB",
+      "description": "Query and manage MongoDB databases",
+      "category": "Infrastructure",
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mongodb-mcp-server@1.13.0"
+      ]
+    },
+    {
+      "slug": "azure",
+      "name": "Azure",
+      "description": "Manage Azure resources",
+      "category": "Infrastructure",
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure/mcp@3.0.0-beta.23",
+        "server",
+        "start"
+      ]
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "description": "Manage repos, issues, pull requests, and Actions",
+      "category": "Dev Tools",
+      "inputs": [
+        {
+          "kind": "oauthClientId"
+        },
+        {
+          "kind": "oauthClientSecret"
+        }
+      ],
+      "transport": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "oauth": {
+        "required": true,
+        "scope": "repo read:org read:user"
+      }
+    },
+    {
+      "slug": "gitlab",
+      "name": "GitLab",
+      "description": "Manage repos, issues, and merge requests",
+      "category": "Dev Tools",
+      "transport": "http",
+      "url": "https://gitlab.com/api/v4/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "postman",
+      "name": "Postman",
+      "description": "Run and manage API collections",
+      "category": "Dev Tools",
+      "transport": "http",
+      "url": "https://mcp.postman.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "buildkite",
+      "name": "Buildkite",
+      "description": "Manage pipelines and builds",
+      "category": "Dev Tools",
+      "transport": "http",
+      "url": "https://mcp.buildkite.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "launchdarkly",
+      "name": "LaunchDarkly",
+      "description": "Manage feature flags and rollouts",
+      "category": "Dev Tools",
+      "transport": "http",
+      "url": "https://mcp.launchdarkly.com/mcp/fm",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "opsera",
+      "name": "Opsera",
+      "description": "DevOps automation",
+      "category": "Dev Tools",
+      "transport": "http",
+      "url": "https://agent.opsera.ai/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "icepanel",
+      "name": "IcePanel",
+      "description": "Architecture diagrams",
+      "category": "Dev Tools",
+      "transport": "http",
+      "url": "https://mcp.icepanel.io/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "context7",
+      "name": "Context7",
+      "description": "Version-pinned library docs",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    {
+      "slug": "chainguard-api",
+      "name": "Chainguard API",
+      "description": "Hardened container platform API",
+      "category": "Security",
+      "transport": "http",
+      "url": "https://console-api.enforce.dev/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "chainguard-images",
+      "name": "Chainguard Images",
+      "description": "Hardened container images",
+      "category": "Security",
+      "transport": "http",
+      "url": "https://cgr.dev/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "chainguard-packages",
+      "name": "Chainguard Packages",
+      "description": "Hardened package index",
+      "category": "Security",
+      "transport": "http",
+      "url": "https://apk.cgr.dev/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "chainguard-versions",
+      "name": "Chainguard Versions",
+      "description": "Package version lookups",
+      "category": "Security",
+      "transport": "http",
+      "url": "https://versions.cgr.dev/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "snyk",
+      "name": "Snyk",
+      "description": "Code and dependency scanning",
+      "category": "Security",
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "snyk@1.1305.2",
+        "mcp",
+        "-t",
+        "stdio"
+      ]
+    },
+    {
+      "slug": "aikido",
+      "name": "Aikido",
+      "description": "Code security scanning",
+      "category": "Security",
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@aikidosec/mcp@1.0.12"
+      ]
+    },
+    {
+      "slug": "meta-quest",
+      "name": "Meta Quest",
+      "description": "Manage Meta Quest devices and apps",
+      "category": "Dev Tools",
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "--ignore-scripts",
+        "@meta-quest/metavr@1.3.2",
+        "mcp",
+        "server"
+      ]
+    },
+    {
+      "slug": "zapier",
+      "name": "Zapier",
+      "description": "Trigger automations across thousands of apps",
+      "category": "Automation & Messaging",
+      "transport": "http",
+      "url": "https://mcp.zapier.com/api/v1/connect",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "composio",
+      "name": "Composio",
+      "description": "Hosted tool integrations",
+      "category": "Automation & Messaging",
+      "transport": "http",
+      "url": "https://connect.composio.dev/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "resend",
+      "name": "Resend",
+      "description": "Email sending API",
+      "category": "Automation & Messaging",
+      "transport": "http",
+      "url": "https://mcp.resend.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "mailtrap",
+      "name": "Mailtrap",
+      "description": "Send emails and test them in a sandbox",
+      "category": "Automation & Messaging",
+      "inputs": [
+        {
+          "kind": "env",
+          "name": "MAILTRAP_API_TOKEN",
+          "label": "API token"
+        },
+        {
+          "kind": "env",
+          "name": "MAILTRAP_ACCOUNT_ID",
+          "label": "Account ID",
+          "optional": true
+        }
+      ],
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-mailtrap@0.9.0"
+      ]
+    },
+    {
+      "slug": "atlan",
+      "name": "Atlan",
+      "description": "Data catalog",
+      "category": "Business Data",
+      "transport": "http",
+      "url": "https://mcp.atlan.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "plain",
+      "name": "Plain",
+      "description": "Customer support platform",
+      "category": "Business Data",
+      "transport": "http",
+      "url": "https://mcp.plain.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "raisely",
+      "name": "Raisely",
+      "description": "Fundraising platform",
+      "category": "Business Data",
+      "transport": "http",
+      "url": "https://mcp.raisely.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "exa",
+      "name": "Exa",
+      "description": "Web search and page fetch",
+      "category": "Web Search",
+      "transport": "http",
+      "url": "https://mcp.exa.ai/mcp"
+    },
+    {
+      "slug": "tavily",
+      "name": "Tavily",
+      "description": "Web search for AI agents",
+      "category": "Web Search",
+      "transport": "http",
+      "url": "https://mcp.tavily.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "cloudflare-docs",
+      "name": "Cloudflare Docs",
+      "description": "Search Cloudflare documentation",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://docs.mcp.cloudflare.com/mcp"
+    },
+    {
+      "slug": "aws-knowledge",
+      "name": "AWS Knowledge",
+      "description": "Search AWS documentation and API references",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://knowledge-mcp.global.api.aws"
+    },
+    {
+      "slug": "svelte-docs",
+      "name": "Svelte",
+      "description": "Svelte and SvelteKit documentation",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://mcp.svelte.dev/mcp"
+    },
+    {
+      "slug": "elastic-docs",
+      "name": "Elastic",
+      "description": "Search Elastic documentation",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://www.elastic.co/docs/_mcp/"
+    },
+    {
+      "slug": "twilio-docs",
+      "name": "Twilio",
+      "description": "Search Twilio documentation",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://mcp.twilio.com/docs"
+    },
+    {
+      "slug": "thoughtspot",
+      "name": "ThoughtSpot",
+      "description": "ThoughtSpot developer docs and embed SDK",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://spottercode.thoughtspot.app/mcp"
+    },
+    {
+      "slug": "paradedb-docs",
+      "name": "ParadeDB",
+      "description": "ParadeDB documentation",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://docs.paradedb.com/mcp"
+    },
+    {
+      "slug": "phantom-docs",
+      "name": "Phantom",
+      "description": "Phantom wallet developer docs",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://docs.phantom.com/mcp"
+    },
+    {
+      "slug": "vercel",
+      "name": "Vercel",
+      "description": "Manage deployments and projects",
+      "category": "Infrastructure",
+      "featured": true,
+      "transport": "http",
+      "url": "https://mcp.vercel.com",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "neon",
+      "name": "Neon",
+      "description": "Manage Postgres databases and branches",
+      "category": "Infrastructure",
+      "transport": "http",
+      "url": "https://mcp.neon.tech/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "supabase",
+      "name": "Supabase",
+      "description": "Manage projects and databases",
+      "category": "Infrastructure",
+      "transport": "http",
+      "url": "https://mcp.supabase.com/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "butterbase",
+      "name": "Butterbase",
+      "description": "Manage databases, auth, and storage",
+      "category": "Infrastructure",
+      "transport": "http",
+      "url": "https://api.butterbase.ai/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "asana",
+      "name": "Asana",
+      "description": "Create tasks, update projects, and search your workspace",
+      "category": "Project Management",
+      "inputs": [
+        {
+          "kind": "oauthClientId"
+        },
+        {
+          "kind": "oauthClientSecret"
+        }
+      ],
+      "transport": "http",
+      "url": "https://mcp.asana.com/v2/mcp",
+      "oauth": {
+        "required": true
+      }
+    },
+    {
+      "slug": "sonatype",
+      "name": "Sonatype",
+      "description": "Query dependency and component intelligence",
+      "category": "Security",
+      "inputs": [
+        {
+          "kind": "header",
+          "name": "Authorization",
+          "prefix": "Bearer ",
+          "label": "API token"
+        }
+      ],
+      "transport": "http",
+      "url": "https://mcp.guide.sonatype.com/mcp"
+    },
+    {
+      "slug": "apify",
+      "name": "Apify",
+      "description": "Run scrapers and automation actors",
+      "category": "Automation & Messaging",
+      "inputs": [
+        {
+          "kind": "header",
+          "name": "Authorization",
+          "prefix": "Bearer ",
+          "label": "API token"
+        }
+      ],
+      "transport": "http",
+      "url": "https://mcp.apify.com"
+    },
+    {
+      "slug": "bright-data",
+      "name": "Bright Data",
+      "description": "Access live web data and scraping tools",
+      "category": "Web Search",
+      "inputs": [
+        {
+          "kind": "env",
+          "name": "API_TOKEN",
+          "label": "API token"
+        }
+      ],
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@brightdata/mcp@2.11.0"
+      ]
+    },
+    {
+      "slug": "capacitor",
+      "name": "Capacitor",
+      "description": "Search Capacitor documentation and plugins",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://capacitor-mcp.capawesome.io/mcp"
+    },
+    {
+      "slug": "ionic-framework",
+      "name": "Ionic Framework",
+      "description": "Search Ionic Framework docs and component examples",
+      "category": "Documentation",
+      "transport": "http",
+      "url": "https://ionic-framework-mcp.capawesome.io/mcp"
+    },
+    {
+      "slug": "capawesome",
+      "name": "Capawesome",
+      "description": "Manage Capawesome Cloud builds and live updates",
+      "category": "Dev Tools",
+      "inputs": [
+        {
+          "kind": "header",
+          "name": "Authorization",
+          "prefix": "Bearer ",
+          "label": "API token",
+          "optional": true
+        }
+      ],
+      "transport": "http",
+      "url": "https://mcp.capawesome.io/mcp?toolsets=all"
+    }
+  ]
+}

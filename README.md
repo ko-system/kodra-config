@@ -4,8 +4,8 @@ Public data files for the KODRA AI app builder: the model catalog, the MCP
 server catalog, community templates, desktop defaults and the pnpm
 `allowBuilds` list. KODRA reads them from
 `https://raw.githubusercontent.com/ko-system/kodra-config/main/<path>` and
-ships a copy of each file inside the app, so it keeps working offline or when
-GitHub is unreachable.
+has a built-in fallback for each file (column "Offline fallback" below), so it
+keeps working offline or when GitHub is unreachable.
 
 The source of truth lives in the KODRABuilder repository under
 `kodra-config/`. The public `ko-system/kodra-config` repository is a mirror
@@ -15,13 +15,13 @@ published by `scripts/publish-kodra-config.mjs`; do not edit it by hand.
 
 ## Files
 
-| File                            | Consumer in KODRABuilder                                         | What it controls                                                                                                                                                                  |
-| ------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `v1/language-model-catalog.json` | `src/ipc/shared/remote_language_model_catalog.ts`                | Cloud providers and models in the model picker, model aliases (theme generator, auto mode, help bot), `codexClientVersion` for ChatGPT subscription requests. Cached for 1 hour. |
-| `v1/mcp-catalog.json`           | `src/ipc/shared/remote_mcp_catalog.ts`                           | Curated MCP servers offered in the plugin catalog and by the agent's `suggest_plugin` tool (`featured: true`). Invalid entries are dropped one by one. Cached for 1 hour.        |
-| `v1/templates.json`             | `src/ipc/utils/template_utils.ts`                                | Community templates on the Hub (`githubOrg`/`githubRepo` are cloned from GitHub). Cached for the app session.                                                                   |
-| `v1/desktop-config.json`        | `src/ipc/shared/remote_desktop_config.ts`                        | Defaults for settings the user has not set, currently `defaults.blockUnsafeNpmPackages`. Cached for 5 minutes and persisted in userData.                                        |
-| `v1/default-approve-builds.txt` | `src/ipc/utils/socket_firewall.ts`                               | npm packages whose install scripts pnpm may run in generated apps (`allowBuilds`). Must keep the `# dyad-default-allow-builds-*` header with `channel=remote`. Max 256 KB.        |
+| File | Consumer in KODRABuilder | What it controls | Offline fallback |
+| --- | --- | --- | --- |
+| `v1/language-model-catalog.json` | `src/ipc/shared/remote_language_model_catalog.ts` | Cloud providers and models in the model picker, model aliases (theme generator, auto mode, help bot), `codexClientVersion` for ChatGPT subscription requests. Cached for 1 hour. | Catalog built from `language_model_constants.ts` |
+| `v1/mcp-catalog.json` | `src/ipc/shared/remote_mcp_catalog.ts` | Curated MCP servers offered in the plugin catalog and by the agent's `suggest_plugin` tool (`featured: true`). Invalid entries are dropped one by one. Cached for 1 hour. | This file, bundled at build time (empty list when remote config is turned off) |
+| `v1/templates.json` | `src/ipc/utils/template_utils.ts` | Community templates on the Hub (`githubOrg`/`githubRepo` are cloned from GitHub). Cached for the app session. | This file, bundled at build time |
+| `v1/desktop-config.json` | `src/ipc/shared/remote_desktop_config.ts` | Defaults for settings the user has not set, currently `defaults.blockUnsafeNpmPackages`. Cached for 5 minutes and persisted in userData. | Last fetched copy, then the built-in defaults (same values as this file) |
+| `v1/default-approve-builds.txt` | `src/ipc/utils/socket_firewall.ts` | npm packages whose install scripts pnpm may run in generated apps (`allowBuilds`). Must keep the `# dyad-default-allow-builds-*` header with `channel=remote`. Max 256 KB. | `src/data/default-approve-builds.txt` (`channel=local`) |
 
 KODRA also sends a `HEAD` request for `v1/desktop-config.json` and reads the
 HTTP `Date` header as a trusted clock for the free Basic Agent quota
@@ -67,7 +67,7 @@ Running apps pick up the change within their cache TTL (at most 1 hour).
 | Variable                          | When       | Effect                                                                                                                                                   |
 | --------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `VITE_KODRA_CONFIG_BASE_URL`      | build time | Base URL for all files (https only), for example a mirror.                                                                                              |
-| `KODRA_DISABLE_REMOTE_CONFIG`     | runtime    | `true`/`1`: never fetch, use the bundled copies. `false`/`0`: fetch. Unset: follows `DYAD_DISABLE_EXTERNAL_SERVICES` (on by default with `DYAD_INTERNAL_PRO=true`). |
+| `KODRA_DISABLE_REMOTE_CONFIG`     | runtime    | `true`/`1`: never fetch, use the offline fallbacks. `false`/`0`: fetch. Unset: follows `DYAD_DISABLE_EXTERNAL_SERVICES` (on by default with `DYAD_INTERNAL_PRO=true`). |
 | `DYAD_LANGUAGE_MODEL_CATALOG_URL`, `DYAD_MCP_CATALOG_URL`, `DYAD_DESKTOP_CONFIG_URL`, `DYAD_DEFAULT_APPROVE_BUILDS_URL` | runtime | Per-file URL (tests, mirrors). Wins over everything above. |
 
 ## Provenance
@@ -95,8 +95,9 @@ Apache-2.0. See `LICENSE`.
 ไฟล์ข้อมูลสาธารณะของ KODRA AI app builder ได้แก่ รายการโมเดล รายการ MCP
 server เทมเพลตจากชุมชน ค่าเริ่มต้นของแอป และรายการ `allowBuilds` ของ pnpm
 แอป KODRA อ่านไฟล์เหล่านี้จาก
-`https://raw.githubusercontent.com/ko-system/kodra-config/main/<path>` และมีสำเนา
-ของทุกไฟล์ฝังมาในตัวแอปด้วย จึงยังใช้งานได้เมื่อออฟไลน์หรือเข้าถึง GitHub ไม่ได้
+`https://raw.githubusercontent.com/ko-system/kodra-config/main/<path>` และมีข้อมูล
+สำรองของทุกไฟล์อยู่ในตัวแอป (ดูคอลัมน์ "Offline fallback" ในตารางภาษาอังกฤษ)
+จึงยังใช้งานได้เมื่อออฟไลน์หรือเข้าถึง GitHub ไม่ได้
 
 ต้นฉบับอยู่ใน repository KODRABuilder ที่โฟลเดอร์ `kodra-config/`
 ส่วน repository สาธารณะ `ko-system/kodra-config` เป็นสำเนาที่ publish ด้วย
@@ -153,7 +154,7 @@ HTTP header `Date` เป็นนาฬิกาที่เชื่อถื�
 ### ตัวแปรสำหรับปรับแต่ง
 
 - `VITE_KODRA_CONFIG_BASE_URL` (ตอน build): base URL ของทุกไฟล์ (https เท่านั้น) เช่น mirror ภายในองค์กร
-- `KODRA_DISABLE_REMOTE_CONFIG` (ตอนรัน): `true`/`1` ไม่ดึงจากเครือข่าย ใช้สำเนาที่ฝังในแอป,
+- `KODRA_DISABLE_REMOTE_CONFIG` (ตอนรัน): `true`/`1` ไม่ดึงจากเครือข่าย ใช้ข้อมูลสำรองในแอป,
   `false`/`0` ดึงจากเครือข่าย, ถ้าไม่ตั้งจะตามค่า `DYAD_DISABLE_EXTERNAL_SERVICES`
   (เปิดเป็นค่าเริ่มต้นเมื่อ `DYAD_INTERNAL_PRO=true`)
 - `DYAD_LANGUAGE_MODEL_CATALOG_URL`, `DYAD_MCP_CATALOG_URL`, `DYAD_DESKTOP_CONFIG_URL`,

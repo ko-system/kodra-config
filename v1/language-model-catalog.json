@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-13.1",
+  "version": "2026-11-15.1",
   "codexClientVersion": "0.159.0",
   "providers": [
     {
@@ -50,6 +50,25 @@
         "displayName": "GPT 6.1 Sol",
         "description": "Near-Astra performance for complex coding and agentic work",
         "dollarSigns": 3,
+        "temperature": 1,
+        "maxOutputTokens": 128000,
+        "contextWindow": 1050000,
+        "effortSettings": {
+          "defaultEffortLevel": "medium",
+          "possibleEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        }
+      },
+      {
+        "apiName": "gpt-6.1-terra",
+        "displayName": "GPT 6.1 Terra",
+        "description": "Balanced cost and capability for everyday coding",
+        "dollarSigns": 2,
         "temperature": 1,
         "maxOutputTokens": 128000,
         "contextWindow": 1050000,
@@ -182,6 +201,25 @@
             "max"
           ]
         }
+      },
+      {
+        "apiName": "claude-haiku-5-5",
+        "displayName": "Claude Haiku 5.5",
+        "description": "Anthropic's fastest, lowest-cost model for high-volume tasks and sub-agents",
+        "dollarSigns": 1,
+        "temperature": 1,
+        "maxOutputTokens": 128000,
+        "contextWindow": 1000000,
+        "effortSettings": {
+          "defaultEffortLevel": "medium",
+          "possibleEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        }
       }
     ],
     "google": [
@@ -220,10 +258,43 @@
         }
       },
       {
+        "apiName": "gemini-4-hydrogen",
+        "displayName": "Gemini 4 Hydrogen",
+        "description": "Fast Gemini 4 model for everyday coding",
+        "dollarSigns": 3,
+        "temperature": 1,
+        "maxOutputTokens": 65536,
+        "contextWindow": 1048576,
+        "effortSettings": {
+          "defaultEffortLevel": "medium",
+          "possibleEffortLevels": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      },
+      {
         "apiName": "gemini-3.8-flash",
         "displayName": "Gemini 3.8 Flash",
         "description": "Google's most intelligent Flash model for complex agentic workflows",
         "dollarSigns": 3,
+        "maxOutputTokens": 65536,
+        "contextWindow": 1048576,
+        "effortSettings": {
+          "defaultEffortLevel": "medium",
+          "possibleEffortLevels": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      },
+      {
+        "apiName": "gemini-3.5-flash-lite",
+        "displayName": "Gemini 3.5 Flash-Lite",
+        "description": "Google's fastest, most cost-effective Gemini model",
+        "dollarSigns": 1,
         "maxOutputTokens": 65536,
         "contextWindow": 1048576,
         "effortSettings": {
@@ -545,7 +616,7 @@
       "id": "dyad/help-bot/default",
       "resolvedModel": {
         "providerId": "openai",
-        "apiName": "gpt-5-nano"
+        "apiName": "gpt-6-luna"
       },
       "displayName": "Help Bot",
       "purpose": "help-bot"

@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16.1",
+  "version": "2026-11-17.1",
   "codexClientVersion": "0.159.0",
   "providers": [
     {
@@ -62,6 +62,19 @@
             "xhigh",
             "max"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 2,
+          "cachedInputPerMTok": 0.1,
+          "cacheWritePerMTok": 2.5,
+          "outputPerMTok": 10,
+          "longContext": {
+            "thresholdInputTokens": 272000,
+            "inputPerMTok": 4,
+            "cachedInputPerMTok": 0.2,
+            "cacheWritePerMTok": 5,
+            "outputPerMTok": 15
+          }
         }
       },
       {
@@ -81,6 +94,19 @@
             "xhigh",
             "max"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 1,
+          "cachedInputPerMTok": 0.05,
+          "cacheWritePerMTok": 1.25,
+          "outputPerMTok": 5,
+          "longContext": {
+            "thresholdInputTokens": 272000,
+            "inputPerMTok": 2,
+            "cachedInputPerMTok": 0.1,
+            "cacheWritePerMTok": 2.5,
+            "outputPerMTok": 7.5
+          }
         }
       },
       {
@@ -100,6 +126,19 @@
             "xhigh",
             "max"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 0.1,
+          "cachedInputPerMTok": 0.01,
+          "cacheWritePerMTok": 0.125,
+          "outputPerMTok": 0.5,
+          "longContext": {
+            "thresholdInputTokens": 272000,
+            "inputPerMTok": 0.2,
+            "cachedInputPerMTok": 0.02,
+            "cacheWritePerMTok": 0.25,
+            "outputPerMTok": 0.75
+          }
         }
       },
       {
@@ -156,6 +195,12 @@
             "xhigh",
             "max"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 8,
+          "cachedInputPerMTok": 0.2,
+          "cacheWritePerMTok": 10,
+          "outputPerMTok": 40
         }
       },
       {
@@ -228,7 +273,7 @@
         },
         "pricing": {
           "inputPerMTok": 2,
-          "cachedInputPerMTok": 0.2,
+          "cachedInputPerMTok": 0.1,
           "cacheWritePerMTok": 2.5,
           "outputPerMTok": 10
         }
@@ -250,6 +295,19 @@
             "xhigh",
             "max"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 0.1,
+          "cachedInputPerMTok": 0.01,
+          "cacheWritePerMTok": 0.125,
+          "outputPerMTok": 0.5,
+          "longContext": {
+            "thresholdInputTokens": 100000,
+            "inputPerMTok": 0.5,
+            "cachedInputPerMTok": 0.05,
+            "cacheWritePerMTok": 0.625,
+            "outputPerMTok": 2.5
+          }
         }
       }
     ],
@@ -269,6 +327,11 @@
             "medium",
             "high"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 2,
+          "cachedInputPerMTok": 0.1,
+          "outputPerMTok": 10
         }
       },
       {
@@ -286,6 +349,11 @@
             "medium",
             "high"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 2,
+          "cachedInputPerMTok": 0.1,
+          "outputPerMTok": 10
         }
       },
       {
@@ -303,6 +371,11 @@
             "medium",
             "high"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 1.5,
+          "cachedInputPerMTok": 0.075,
+          "outputPerMTok": 7.5
         }
       },
       {
@@ -340,6 +413,11 @@
             "medium",
             "high"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 0.3,
+          "cachedInputPerMTok": 0.03,
+          "outputPerMTok": 2.5
         }
       }
     ],
@@ -359,6 +437,11 @@
             "medium",
             "high"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 0.75,
+          "cachedInputPerMTok": 0.075,
+          "outputPerMTok": 3.75
         }
       }
     ],
@@ -411,6 +494,12 @@
             "high",
             "max"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 3,
+          "cachedInputPerMTok": 0.3,
+          "cacheWritePerMTok": 3,
+          "outputPerMTok": 15
         }
       },
       {
@@ -430,6 +519,12 @@
             "high",
             "xhigh"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 2,
+          "cachedInputPerMTok": 0.25,
+          "cacheWritePerMTok": 2.5,
+          "outputPerMTok": 6
         }
       },
       {
@@ -476,9 +571,9 @@
           ]
         },
         "pricing": {
-          "inputPerMTok": 1.2,
-          "cachedInputPerMTok": 0.24,
-          "outputPerMTok": 4
+          "inputPerMTok": 1.4,
+          "cachedInputPerMTok": 0.26,
+          "outputPerMTok": 4.4
         }
       },
       {
@@ -498,9 +593,9 @@
           ]
         },
         "pricing": {
-          "inputPerMTok": 0.075,
-          "cachedInputPerMTok": 0.015,
-          "outputPerMTok": 0.25
+          "inputPerMTok": 0.15,
+          "cachedInputPerMTok": 0.03,
+          "outputPerMTok": 0.5
         }
       },
       {
@@ -517,6 +612,11 @@
             "medium",
             "high"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 0.3,
+          "cachedInputPerMTok": 0.06,
+          "outputPerMTok": 1.2
         }
       },
       {
@@ -533,6 +633,11 @@
             "high",
             "max"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 0.3,
+          "cachedInputPerMTok": 0.006,
+          "outputPerMTok": 1.2
         }
       },
       {
@@ -550,6 +655,11 @@
             "medium",
             "high"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 0.435,
+          "cachedInputPerMTok": 0.0036,
+          "outputPerMTok": 0.87
         }
       },
       {
@@ -567,6 +677,11 @@
             "medium",
             "high"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 0.14,
+          "cachedInputPerMTok": 0.0028,
+          "outputPerMTok": 0.28
         }
       },
       {
@@ -585,6 +700,17 @@
             "high",
             "xhigh"
           ]
+        },
+        "pricing": {
+          "inputPerMTok": 2,
+          "cachedInputPerMTok": 0.5,
+          "outputPerMTok": 6,
+          "longContext": {
+            "thresholdInputTokens": 200000,
+            "inputPerMTok": 4,
+            "cachedInputPerMTok": 1,
+            "outputPerMTok": 12
+          }
         }
       }
     ]

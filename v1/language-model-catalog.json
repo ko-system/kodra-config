@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-17.1",
+  "version": "2026-11-19.1",
   "codexClientVersion": "0.159.0",
   "providers": [
     {
@@ -75,7 +75,8 @@
             "cacheWritePerMTok": 5,
             "outputPerMTok": 15
           }
-        }
+        },
+        "economyModel": "gpt-6-luna"
       },
       {
         "apiName": "gpt-6.1-terra",
@@ -107,7 +108,8 @@
             "cacheWritePerMTok": 2.5,
             "outputPerMTok": 7.5
           }
-        }
+        },
+        "economyModel": "gpt-6-luna"
       },
       {
         "apiName": "gpt-6-luna",
@@ -174,7 +176,8 @@
         },
         "lifecycle": {
           "stage": "preview"
-        }
+        },
+        "economyModel": "gpt-6-luna"
       }
     ],
     "anthropic": [
@@ -201,7 +204,8 @@
           "cachedInputPerMTok": 0.2,
           "cacheWritePerMTok": 10,
           "outputPerMTok": 40
-        }
+        },
+        "economyModel": "claude-haiku-5-5"
       },
       {
         "apiName": "claude-fable-5-1",
@@ -226,7 +230,8 @@
           "cachedInputPerMTok": 0.25,
           "cacheWritePerMTok": 12.5,
           "outputPerMTok": 50
-        }
+        },
+        "economyModel": "claude-haiku-5-5"
       },
       {
         "apiName": "claude-opus-5-5",
@@ -251,7 +256,8 @@
           "cachedInputPerMTok": 0.2,
           "cacheWritePerMTok": 5,
           "outputPerMTok": 20
-        }
+        },
+        "economyModel": "claude-haiku-5-5"
       },
       {
         "apiName": "claude-sonnet-5-5",
@@ -276,7 +282,8 @@
           "cachedInputPerMTok": 0.1,
           "cacheWritePerMTok": 2.5,
           "outputPerMTok": 10
-        }
+        },
+        "economyModel": "claude-haiku-5-5"
       },
       {
         "apiName": "claude-haiku-5-5",
@@ -332,7 +339,8 @@
           "inputPerMTok": 2,
           "cachedInputPerMTok": 0.1,
           "outputPerMTok": 10
-        }
+        },
+        "economyModel": "gemini-3.8-flash"
       },
       {
         "apiName": "gemini-4-carbon",
@@ -354,7 +362,8 @@
           "inputPerMTok": 2,
           "cachedInputPerMTok": 0.1,
           "outputPerMTok": 10
-        }
+        },
+        "economyModel": "gemini-3.8-flash"
       },
       {
         "apiName": "gemini-4-hydrogen",
@@ -376,7 +385,8 @@
           "inputPerMTok": 1.5,
           "cachedInputPerMTok": 0.075,
           "outputPerMTok": 7.5
-        }
+        },
+        "economyModel": "gemini-3.8-flash"
       },
       {
         "apiName": "gemini-3.8-flash",
@@ -574,7 +584,8 @@
           "inputPerMTok": 1.4,
           "cachedInputPerMTok": 0.26,
           "outputPerMTok": 4.4
-        }
+        },
+        "economyModel": "z-ai/glm-5.3-flash"
       },
       {
         "apiName": "z-ai/glm-5.3-flash",
@@ -660,7 +671,8 @@
           "inputPerMTok": 0.435,
           "cachedInputPerMTok": 0.0036,
           "outputPerMTok": 0.87
-        }
+        },
+        "economyModel": "xiaomi/mimo-v2.6-flash"
       },
       {
         "apiName": "xiaomi/mimo-v2.6-flash",
